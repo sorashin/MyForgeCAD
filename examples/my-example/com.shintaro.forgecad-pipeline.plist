@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.shintaro.forgecad-pipeline</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/shintaro/dev/ForgeCAD/examples/my-example/scheduled-run.sh</string>
+    </array>
+
+    <!-- Daily at 09:00 local time. -->
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Hour</key>
+        <integer>9</integer>
+        <key>Minute</key>
+        <integer>0</integer>
+    </dict>
+
+    <!-- If the Mac was asleep at 09:00, run as soon as it wakes. -->
+    <key>RunAtLoad</key>
+    <false/>
+
+    <!-- Captured by scheduled-run.sh, but also redirect any pre-shell errors. -->
+    <key>StandardOutPath</key>
+    <string>/Users/shintaro/dev/ForgeCAD/examples/my-example/_logs/launchd.out.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/shintaro/dev/ForgeCAD/examples/my-example/_logs/launchd.err.log</string>
+
+    <!-- Working directory hint; the wrapper script also cd's to the repo root. -->
+    <key>WorkingDirectory</key>
+    <string>/Users/shintaro/dev/ForgeCAD</string>
+</dict>
+</plist>
